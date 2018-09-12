@@ -1,0 +1,30 @@
+{
+  "name": "art",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<18047170938@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "mint-ui": "^2.2.13",
+    "nuxt": "^1.4.2",
+    "postcss-aspect-ratio-mini": "^0.0.2",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-px-to-viewport": "^0.0.3",
+    "postcss-viewport-units": "^0.1.4"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "5000"
+    }
+  },
+  "devDependencies": {
+    "cssnano-preset-advanced": "^4.0.0"
+  }
+}
