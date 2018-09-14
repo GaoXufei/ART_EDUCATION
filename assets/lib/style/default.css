@@ -1,0 +1,8 @@
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+  font-size: 24px;
+  font-family: Helvetica;
+}
