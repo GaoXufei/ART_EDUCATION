@@ -6,3 +6,11 @@ body,
   font-size: 24px;
   font-family: Helvetica;
 }
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .3s, transform .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+  transform: translateY(40px);
+}
