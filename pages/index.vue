@@ -54,8 +54,8 @@ export default {
 			environment: {
 				isBtn: true,
 				infos: [
-					{ src: require('~/assets/images/index/environment_list.png'), name: 'environment' },
-					{ src: require('~/assets/images/index/environment_list.png'), name: 'environment' },
+					{ src: require('~/assets/images/index/environment_list.png') },
+					{ src: require('~/assets/images/index/environment_list.png') },
 				],
 			},
 		};

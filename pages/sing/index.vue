@@ -26,6 +26,9 @@ import SummaryNew from '~/components/summaryNew';
 import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
 export default {
+	head: {
+		title: '声乐培训',
+	},
 	data() {
 		return {
 			sing: {

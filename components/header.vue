@@ -114,7 +114,7 @@ export default {
 			margin-left: 10px;
 
 			& dt {
-				font-size: 56px;
+				font-size: 54px;
 				font-weight: 700;
 			}
 			& dd {
