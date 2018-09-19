@@ -46,10 +46,18 @@ export default {
 				],
 			},
 			hot: [
-				{ src: require('~/assets/images/index/hot_shaoer_shengyue.png'), text: '少儿·声乐', type: 'shengyue' },
-				{ src: require('~/assets/images/index/hot_jita.png'), text: '吉他·培训', type: 'qiyue' },
-				{ src: require('~/assets/images/index/hot_chengren_wudao.png'), text: '成人·舞蹈', type: 'dance' },
-				{ src: require('~/assets/images/index/hot_xianshang.png'), text: '线上·培训', type: 'online' },
+				{
+					src: require('~/assets/images/index/hot_shaoer_shengyue.png'),
+					title: '少儿·声乐',
+					name: 'sing-juvenile',
+				},
+				{ src: require('~/assets/images/index/hot_jita.png'), title: '吉他·培训', name: 'instrumental-guitar' },
+				{
+					src: require('~/assets/images/index/hot_chengren_wudao.png'),
+					title: '成人·舞蹈',
+					name: 'dance-fullgrown',
+				},
+				{ src: require('~/assets/images/index/hot_xianshang.png'), title: '线上·培训', name: 'online' },
 			],
 			environment: {
 				isBtn: true,

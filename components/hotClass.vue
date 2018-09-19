@@ -4,13 +4,13 @@
     <div class="hotContent">
       <ul>
         <li v-for="item in hot" :key="item.key">
-          <nuxt-link :to="item.type">
+          <nuxt-link :to="{ name: item.name , query: { title: item.title }}">
             <dl>
               <dt>
                 <img :src="item.src" alt="">
               </dt>
               <dd>
-                {{ item.text }}
+                {{ item.title }}
               </dd>
             </dl>
           </nuxt-link>

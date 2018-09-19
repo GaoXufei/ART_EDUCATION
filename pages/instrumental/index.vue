@@ -3,7 +3,7 @@
     <Swiper :banner="sing" />
     <SummaryNew />
     <main class="sing_main">
-      <ColumnTop title="声乐培训" />
+      <ColumnTop title="器乐培训" />
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
@@ -28,7 +28,7 @@ import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
 export default {
 	head: {
-		title: '声乐培训',
+		title: '器乐培训',
 	},
 	data() {
 		return {
@@ -36,8 +36,21 @@ export default {
 				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
 			},
 			course: [
-				{ src: require('~/assets/images/sing/course_list01.jpg'), text: '少儿·声乐', name: 'sing-juvenile' },
-				{ src: require('~/assets/images/sing/course_list02.jpg'), text: '成人·声乐', name: 'sing-fullgrown' },
+				{
+					src: require('~/assets/images/instrumental/course_list01.png'),
+					text: '钢琴·培训',
+					name: 'instrumental-piano',
+				},
+				{
+					src: require('~/assets/images/instrumental/course_list01.png'),
+					text: '吉他·培训',
+					name: 'instrumental-guitar',
+				},
+				{
+					src: require('~/assets/images/instrumental/course_list01.png'),
+					text: '尤克里里·培训',
+					name: 'instrumental-ukulele',
+				},
 			],
 		};
 	},

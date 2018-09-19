@@ -5,10 +5,10 @@
     </div>
     <div class="summary-content">
       <ul class="scroll-content" :style="{ 'transform': 'translateY('+ top +')' }">
-        <li v-for="item in newslist" :key="item.id">
+        <li v-for="item in newslist" :key="item.key">
           <i></i>
-          <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
-          <span>{{ item.time }}</span>
+          <nuxt-link :to="{ name: item.name, params: { id: item.id }, query: { title: item.title } }">{{ item.title }}</nuxt-link>
+          <span>{{ item.date }}</span>
         </li>
       </ul>
     </div>
@@ -19,10 +19,24 @@ export default {
 	data() {
 		return {
 			newslist: [
-				{ title: '腰果难吃总统发飙', id: '1', url: 'www.baidu.com', time: '12/06' },
-				{ title: '利欧收购微信', id: '2', url: 'www.baidu.com', time: '12/06' },
-				{ title: '厦门机场青菜面', id: '3', url: 'www.baidu.com', time: '12/06' },
-				{ title: '新iPhone价格', id: '4', url: 'www.baidu.com', time: '12/06' },
+				{
+					title: '艺起学舞蹈班第二期开课啦！',
+					date: '10/15',
+					name: 'news-id',
+					id: 0,
+				},
+				{
+					title: '艺起学舞蹈班第二期开课啦！',
+					date: '10/15',
+					name: 'news-id',
+					id: 0,
+				},
+				{
+					title: '艺起学舞蹈班第二期开课啦！',
+					date: '10/15',
+					name: 'news-id',
+					id: 0,
+				},
 			],
 			activeIndex: 0,
 			listHeight: null,

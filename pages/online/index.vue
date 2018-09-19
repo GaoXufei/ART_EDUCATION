@@ -3,7 +3,8 @@
     <Swiper :banner="sing" />
     <SummaryNew />
     <main class="sing_main">
-      <ColumnTop title="声乐培训" />
+      <!-- 栏目名称 -->
+      <ColumnTop title="线上课程" />
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
@@ -18,7 +19,6 @@
     <div class="Splendid">
       <Splendid />
     </div>
-
   </div>
 </template>
 <script>
@@ -28,7 +28,7 @@ import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
 export default {
 	head: {
-		title: '声乐培训',
+		title: '线上课程', // 页面title
 	},
 	data() {
 		return {
@@ -36,8 +36,31 @@ export default {
 				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
 			},
 			course: [
-				{ src: require('~/assets/images/sing/course_list01.jpg'), text: '少儿·声乐', name: 'sing-juvenile' },
-				{ src: require('~/assets/images/sing/course_list02.jpg'), text: '成人·声乐', name: 'sing-fullgrown' },
+				{
+					src: require('~/assets/images/online/course_list01.png'),
+					text: '视频1对1·乐理视唱',
+					name: 'online-oneByOne-Sightsinging',
+				},
+				{
+					src: require('~/assets/images/online/course_list01.png'),
+					text: '视频1对1·学唱歌',
+					name: 'online-oneByOne-sing',
+				},
+				{
+					src: require('~/assets/images/online/course_list01.png'),
+					text: '视频1对1·学钢琴',
+					name: 'online-oneByOne-piano',
+				},
+				{
+					src: require('~/assets/images/online/course_list01.png'),
+					text: '视频1对1·学吉他',
+					name: 'online-oneByOne-guitar',
+				},
+				{
+					src: require('~/assets/images/online/course_list01.png'),
+					text: '视频1对1·尤克里里',
+					name: 'online-oneByOne-ukulele',
+				},
 			],
 		};
 	},

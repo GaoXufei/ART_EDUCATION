@@ -3,7 +3,7 @@
     <Swiper :banner="sing" />
     <SummaryNew />
     <main class="sing_main">
-      <ColumnTop title="声乐培训" />
+      <ColumnTop title="舞蹈培训" />
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
@@ -28,7 +28,7 @@ import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
 export default {
 	head: {
-		title: '声乐培训',
+		title: '舞蹈培训',
 	},
 	data() {
 		return {
@@ -36,8 +36,16 @@ export default {
 				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
 			},
 			course: [
-				{ src: require('~/assets/images/sing/course_list01.jpg'), text: '少儿·声乐', name: 'sing-juvenile' },
-				{ src: require('~/assets/images/sing/course_list02.jpg'), text: '成人·声乐', name: 'sing-fullgrown' },
+				{
+					src: require('~/assets/images/dance/course_list01.png'),
+					text: '成人·舞蹈',
+					name: 'dance-fullgrown',
+				},
+				{
+					src: require('~/assets/images/dance/course_list01.png'),
+					text: '少儿·舞蹈',
+					name: 'dance-juvenile',
+				},
 			],
 		};
 	},

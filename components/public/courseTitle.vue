@@ -33,7 +33,7 @@ export default {
 	& span {
 		background: #fff;
 		color: $background;
-		font-size: 55px;
+		font-size: 45px;
 		font-weight: 700;
 		position: relative;
 		z-index: 2;

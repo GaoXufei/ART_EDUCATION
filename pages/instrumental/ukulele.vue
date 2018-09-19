@@ -5,6 +5,10 @@
     <main class="course_detail">
       <CourseTitle :title="info.title" />
       <div class="content">
+        <div class="classify">
+          <span>科目分类：</span>
+          <i>民谣吉他 古典吉他 尤克里里</i>
+        </div>
         <div class="introduce">
           <ul>
             <li>
@@ -36,17 +40,17 @@
         </div>
         <div class="target">
           <div class="title">
-            <h2>课程目标和任务</h2>
+            <h2>课程目标</h2>
           </div>
           <div class="content">
-            <img src="~/assets/images/sing/shaoer/target.jpg" alt="">
+            <img src="~/assets/images/public/target_play.jpg" alt="">
           </div>
         </div>
       </div>
     </main>
 
     <main class="innovate">
-      <CourseInnovate />
+      <CourseInnovate :isServe="isServe" />
     </main>
 
     <Splendid class="Splendid" />
@@ -60,32 +64,42 @@ import CourseTitle from '~/components/public/courseTitle';
 import CourseInnovate from '~/components/courseInnovate';
 import Splendid from '~/components/public/splendid';
 export default {
-	head: {
-		title: '少儿声乐',
-	},
-	data() {
+	scrollToTop: true,
+
+	asyncData({ query }) {
+		const title = query.title;
 		return {
+			// 一起弹还是一起唱 sing / play
+			isServe: 'play',
+			// 顶部轮播
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/sing/juvenile/banner.jpg') }],
 			},
+			// 主体内容
 			info: {
-				title: '少儿·声乐',
-				be_propitious_to: '3岁至16岁青少儿，零基础，有基础，兴趣爱好提升，声乐考级，才艺提成。',
+				title: title,
+				be_propitious_to: '少儿、成人、零基础及有基础 音乐爱好者、兴趣培养、 才艺提升。',
 				course_style: ['1对1', '1对2', '精品小班'],
 				course_introduce: {
 					explain:
-						'少儿歌唱教育有别于成人声乐教育，其根本在于少儿的生理、心理、理解力都与成人存在差异。因此艺启学教学目标、教学手法。',
+						'吉他尤克里里学习，其根本在于学员的年龄，心理、生理、理解力、承受力等等都存在某种程度上的差异。因此，无论是教学手法、教学内容、都要量体裁衣，制定更加适合学员的一套教学大纲、教材、教学手法。',
 					superiority: [
 						'A.进阶闯关式学习模式 趣味性强；',
-						'B.以孩子的嗓音条件、性格、学员之需为本、针对性强;',
-						'C.创新的教学模式 、让孩子学唱歌更加通俗易懂、专业性强；',
-						'D.培养儿童良好的上课纪律、礼节和意识；',
-						'E.启迪孩子的心灵；',
-						'F.立足于中华民族文化；',
+						'B.以学员的基础条件、性格、学员之需为本、针对性强',
+						'C.创新的教学模式 让学员更加通俗易懂 、专业但不枯燥',
+						'D.初学期间也可以弹唱或独奏自己喜欢的歌曲或乐曲',
 					],
 				},
 			},
 		};
+	},
+	head() {
+		return {
+			title: this.info.title,
+		};
+	},
+	mounted() {
+		// this.info.title = this.$route.query.title;
 	},
 	components: {
 		Swiper,
@@ -108,14 +122,24 @@ export default {
 		padding: 40px 0;
 
 		& .content {
+			& .classify {
+				text-align: center;
+				margin: 20px 0 0 0;
+				font-size: 20px;
+
+				& span {
+					color: $background;
+				}
+			}
+
 			& .introduce {
 				padding: 0 60px;
 				box-sizing: border-box;
 
 				& ul {
-					background: url('~/assets/images/sing/shaoer/person.png') no-repeat;
-					background-size: 45%;
-					background-position: right 20px;
+					background: url('~/assets/images/instrumental/ukulele/person.png') no-repeat;
+					background-size: 30%;
+					background-position: right 100px;
 
 					& li {
 						margin-top: 34px;
@@ -199,3 +223,4 @@ export default {
 	}
 }
 </style>
+

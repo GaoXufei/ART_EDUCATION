@@ -1,37 +1,11 @@
 <template>
   <nav>
     <ul>
-      <li>
-        <nuxt-link to="/sing">
+      <li v-for="item in recommend" :key="item.key">
+        <nuxt-link :to="{ name: item.name }">
           <dl>
-            <dt><img src="../assets/images/index/nav-list01.png" alt=""></dt>
-            <dd>唱歌</dd>
-          </dl>
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/dance">
-          <dl>
-            <dt><img src="../assets/images/index/nav-list02.png" alt=""></dt>
-            <dd>舞蹈</dd>
-          </dl>
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/broadcast">
-          <dl>
-            <dt><img src="../assets/images/index/nav-list03.png" alt=""></dt>
-            <dd>播音
-              <span></span>
-              口才</dd>
-          </dl>
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/instrumental">
-          <dl>
-            <dt><img src="../assets/images/index/nav-list04.png" alt=""></dt>
-            <dd>器乐</dd>
+            <dt><img :src="item.src" alt=""></dt>
+            <dd>{{ item.title }}</dd>
           </dl>
         </nuxt-link>
       </li>
@@ -40,7 +14,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			recommend: [
+				{
+					title: '唱歌',
+					src: require('~/assets/images/index/nav-list01.png'),
+					name: 'sing',
+				},
+				{
+					title: '舞蹈',
+					src: require('~/assets/images/index/nav-list02.png'),
+					name: 'dance',
+				},
+				{
+					title: '播音·口才',
+					src: require('~/assets/images/index/nav-list03.png'),
+					name: 'transmit',
+				},
+				{
+					title: '器乐',
+					src: require('~/assets/images/index/nav-list04.png'),
+					name: 'instrumental',
+				},
+			],
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,14 +50,16 @@ nav {
 	padding: 20px 0;
 
 	& ul {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
 		padding: 0 20px;
 		box-sizing: border-box;
+		display: -webkit-box;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
 
 		& li {
-			width: 23%;
+			width: 24%;
+			margin-right: 1.33333333%;
 
 			& a {
 				& dl {

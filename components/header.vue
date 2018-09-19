@@ -29,22 +29,22 @@
               <nuxt-link :to="{ name: 'sing' }" @click.native="List">唱歌培训</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/instrumental" @click.native="List">器乐培训</nuxt-link>
+              <nuxt-link :to="{name: 'instrumental'}" @click.native="List">器乐培训</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/dance" @click.native="List">舞蹈培训</nuxt-link>
+              <nuxt-link :to="{ name: 'dance' }" @click.native="List">舞蹈培训</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/broadcast" @click.native="List">播音口才</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/online" @click.native="List">线上培训</nuxt-link>
+              <nuxt-link :to="{ name: 'online' }" @click.native="List">线上培训</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/live" @click.native="List">直播课</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/new" @click.native="List">新闻资讯</nuxt-link>
+              <nuxt-link :to="{ name: 'news' }" @click.native="List">新闻资讯</nuxt-link>
             </li>
           </ul>
         </dd>
@@ -161,7 +161,7 @@ export default {
 			position: absolute;
 			top: 100%;
 			right: 0;
-			z-index: 2;
+			z-index: 9;
 
 			& ul {
 				padding: 20px 0 50px 0;
