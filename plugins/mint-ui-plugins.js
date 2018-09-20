@@ -3,7 +3,7 @@ import {
   Swipe,
   SwipeItem,
   InfiniteScroll,
-  Spinner
+  Spinner,
 } from 'mint-ui';
 
 Vue.use(InfiniteScroll)

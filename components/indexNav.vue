@@ -31,7 +31,7 @@ export default {
 				{
 					title: '播音·口才',
 					src: require('~/assets/images/index/nav-list03.png'),
-					name: 'transmit',
+					// name: 'transmit',
 				},
 				{
 					title: '器乐',
