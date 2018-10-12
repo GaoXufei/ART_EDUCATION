@@ -1,53 +1,66 @@
 <template>
   <nav>
-    <ul>
-      <li v-for="item in recommend" :key="item.key">
-        <nuxt-link :to="{ name: item.name }">
-          <dl>
-            <dt><img :src="item.src" alt=""></dt>
-            <dd>{{ item.title }}</dd>
-          </dl>
-        </nuxt-link>
-      </li>
-    </ul>
+    <transition name="nav">
+      <ul v-show="loading">
+        <li v-for="item in recommend" :key="item.key">
+          <nuxt-link :to="{ name: item.name }">
+            <dl>
+              <dt><img :src="item.src" alt=""></dt>
+              <dd>{{ item.title }}</dd>
+            </dl>
+          </nuxt-link>
+        </li>
+      </ul>
+    </transition>
   </nav>
 </template>
 
 <script>
+import { api_nav } from '../ApiManage/index';
+import qs from 'qs';
+import LRU from 'lru-cache';
 export default {
+	name: 'recommend',
+	serverCacheKey() {
+		// Will change every 10 secondes
+		return Math.floor(Date.now() / 10000);
+	},
 	data() {
 		return {
-			recommend: [
-				{
-					title: '唱歌',
-					src: require('~/assets/images/index/nav-list01.png'),
-					name: 'sing',
-				},
-				{
-					title: '舞蹈',
-					src: require('~/assets/images/index/nav-list02.png'),
-					name: 'dance',
-				},
-				{
-					title: '播音·口才',
-					src: require('~/assets/images/index/nav-list03.png'),
-					// name: 'transmit',
-				},
-				{
-					title: '器乐',
-					src: require('~/assets/images/index/nav-list04.png'),
-					name: 'instrumental',
-				},
-			],
+			recommend: this.$store.state.options.indexNavs,
+			loading: true,
 		};
+	},
+	mounted() {
+		// console.log(this.$store.state.options.indexNavs);
+		// this.getList();
+	},
+	methods: {
+		async getList() {
+			const { data } = await this.$axios.post(api_nav(), qs.stringify({ str: '2,3,4,5' }));
+			this.recommend = data.data;
+			this.loading = true;
+		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
+.nav-enter-active {
+	transition: all 0.3s ease;
+}
+.nav-leave-active {
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.nav-enter,
+.nav-leave-to {
+	transform: translateX(-100%);
+	opacity: 0;
+}
 nav {
 	background: #fff;
 	padding: 20px 0;
+	height: 210px;
 
 	& ul {
 		padding: 0 20px;

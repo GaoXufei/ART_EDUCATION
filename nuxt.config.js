@@ -1,4 +1,23 @@
 module.exports = {
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  axios: {
+    proxy: true,
+    prefix: '/',
+    credentials: true,
+  },
+  proxy: {
+    '/api': {
+      target: 'http://47.92.24.1:8083/',
+      changeOrigin: true,
+      ws: true,
+      pathRewrite: {
+        '^/api': ''
+      } // /api
+    } // pathRewrite
+  },
   loading: {
     color: '#66CDAA'
   },
@@ -6,17 +25,17 @@ module.exports = {
   head: {
     titleTemplate: '%s - 艺启学',
     meta: [{
-        charset: 'utf-8'
-      },
-      {
-        name: 'viewport',
-        content: 'width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Meta description'
-      }
+      charset: 'utf-8'
+    },
+    {
+      name: 'viewport',
+      content: 'width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Meta description'
+    }
     ]
   },
   css: [
@@ -24,11 +43,16 @@ module.exports = {
     '~/assets/lib/style/reset.css',
     '~/assets/lib/style/default.css',
   ],
+  transition: {
+    name: 'page',
+    mode: 'out-in',
+  },
   plugins: [
     // 引入mint-ui
-    '~plugins/mint-ui-plugins.js'
+    '~plugins/mint-ui-plugins.js',
   ],
   build: {
+    vendor: ['axios'],
     // 引入公共scss
     styleResources: {
       // 主题

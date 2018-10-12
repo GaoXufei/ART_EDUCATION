@@ -7,7 +7,7 @@
       <ul class="scroll-content" :style="{ 'transform': 'translateY('+ top +')' }">
         <li v-for="item in newslist" :key="item.key">
           <i></i>
-          <nuxt-link :to="{ name: item.name, params: { id: item.id }, query: { title: item.title } }">{{ item.title }}</nuxt-link>
+          <nuxt-link :to="{ name: item.name, query: { id: item.id } }">{{ item.title }}</nuxt-link>
           <span>{{ item.date }}</span>
         </li>
       </ul>
@@ -15,29 +15,11 @@
   </div>
 </template>
 <script>
+import { api_new_top } from '~/ApiManage/index';
 export default {
 	data() {
 		return {
-			newslist: [
-				{
-					title: '艺起学舞蹈班第二期开课啦！',
-					date: '10/15',
-					name: 'news-id',
-					id: 0,
-				},
-				{
-					title: '艺起学舞蹈班第二期开课啦！',
-					date: '10/15',
-					name: 'news-id',
-					id: 0,
-				},
-				{
-					title: '艺起学舞蹈班第二期开课啦！',
-					date: '10/15',
-					name: 'news-id',
-					id: 0,
-				},
-			],
+			newslist: this.$store.state.options.summarys || [{}],
 			activeIndex: 0,
 			listHeight: null,
 		};
@@ -45,6 +27,7 @@ export default {
 	mounted() {
 		this.summaryPlay();
 		this.getListHeight();
+		// this.getHttp();
 	},
 	methods: {
 		summaryPlay() {
@@ -58,6 +41,10 @@ export default {
 		},
 		getListHeight() {
 			this.listHeight = document.querySelector('.scroll-content').children[0].clientHeight;
+		},
+		async getHttp() {
+			const new_list = await this.$axios.get(`${api_new_top()}&num=3`);
+			this.newslist = new_list.data.data || [{}];
 		},
 	},
 	computed: {

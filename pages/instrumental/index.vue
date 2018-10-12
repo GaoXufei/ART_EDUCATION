@@ -33,21 +33,21 @@ export default {
 	data() {
 		return {
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/instrumental/banner.jpg') }],
 			},
 			course: [
 				{
-					src: require('~/assets/images/instrumental/course_list01.png'),
+					src: require('~/assets/images/instrumental/course_list01.jpg'),
 					text: '钢琴·培训',
 					name: 'instrumental-piano',
 				},
 				{
-					src: require('~/assets/images/instrumental/course_list01.png'),
+					src: require('~/assets/images/instrumental/course_list02.jpg'),
 					text: '吉他·培训',
 					name: 'instrumental-guitar',
 				},
 				{
-					src: require('~/assets/images/instrumental/course_list01.png'),
+					src: require('~/assets/images/instrumental/course_list03.jpg'),
 					text: '尤克里里·培训',
 					name: 'instrumental-ukulele',
 				},

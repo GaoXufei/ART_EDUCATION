@@ -7,9 +7,9 @@
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
-            <nuxt-link :to="{ name: item.name, query: { title: item.text } }">
+            <nuxt-link :to="{ name: item.name, query: { title: item.title } }">
               <img :src="item.src" alt="">
-              <p>{{ item.text }}</p>
+              <p>{{ item.title }}</p>
             </nuxt-link>
           </li>
         </ul>
@@ -26,6 +26,8 @@ import Swiper from '~/components/swiper';
 import SummaryNew from '~/components/summaryNew';
 import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
+import Qs from 'qs';
+import { api_course_id_list } from '~/ApiManage/index';
 export default {
 	head: {
 		title: '舞蹈培训',
@@ -33,22 +35,20 @@ export default {
 	data() {
 		return {
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/dance/banner.jpg') }],
 			},
-			course: [
-				{
-					src: require('~/assets/images/dance/course_list01.png'),
-					text: '成人·舞蹈',
-					name: 'dance-fullgrown',
-				},
-				{
-					src: require('~/assets/images/dance/course_list01.png'),
-					text: '少儿·舞蹈',
-					name: 'dance-juvenile',
-				},
-			],
+			course: this.$store.state.options.dances || [],
 		};
 	},
+	// async asyncData({ app }) {
+	// 	const course_list = await app.$axios.post(api_course_id_list(), Qs.stringify({ id: 4 }));
+	// 	return {
+	// 		sing: {
+	// 			infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+	// 		},
+	// 		course: course_list.data.data,
+	// 	};
+	// },
 	components: {
 		Swiper,
 		SummaryNew,

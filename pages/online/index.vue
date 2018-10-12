@@ -33,31 +33,31 @@ export default {
 	data() {
 		return {
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/online/banner.jpg') }],
 			},
 			course: [
 				{
-					src: require('~/assets/images/online/course_list01.png'),
+					src: require('~/assets/images/online/course_list01.jpg'),
 					text: '视频1对1·乐理视唱',
 					name: 'online-oneByOne-Sightsinging',
 				},
 				{
-					src: require('~/assets/images/online/course_list01.png'),
+					src: require('~/assets/images/online/course_list02.jpg'),
 					text: '视频1对1·学唱歌',
 					name: 'online-oneByOne-sing',
 				},
 				{
-					src: require('~/assets/images/online/course_list01.png'),
+					src: require('~/assets/images/online/course_list03.jpg'),
 					text: '视频1对1·学钢琴',
 					name: 'online-oneByOne-piano',
 				},
 				{
-					src: require('~/assets/images/online/course_list01.png'),
+					src: require('~/assets/images/online/course_list04.jpg'),
 					text: '视频1对1·学吉他',
 					name: 'online-oneByOne-guitar',
 				},
 				{
-					src: require('~/assets/images/online/course_list01.png'),
+					src: require('~/assets/images/online/course_list05.jpg'),
 					text: '视频1对1·尤克里里',
 					name: 'online-oneByOne-ukulele',
 				},

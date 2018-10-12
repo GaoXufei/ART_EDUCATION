@@ -7,10 +7,19 @@ body,
   font-family: Helvetica;
 }
 
-.page-enter-active, .page-leave-active {
-  transition: opacity .3s, transform .5s;
+
+.page-enter-active{
+  transition: opacity .5s , transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
-.page-enter, .page-leave-active {
+.page-leave-active{
+  transition: opacity .5s , transform .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.page-enter{
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.page-leave-active {
   opacity: 0;
   transform: translateY(40px);
 }

@@ -55,7 +55,7 @@ export default {
 			isServe: 'dance',
 			// 顶部轮播
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/juvenile/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/dance/banner.jpg') }],
 			},
 			// 主体内容
 			info: {

@@ -22,29 +22,8 @@
             <li>
               <nuxt-link :to="{ name: 'index' }" @click.native="List">首页</nuxt-link>
             </li>
-            <li>
-              <nuxt-link :to="{ name: 'about' }" @click.native="List">关于艺启学</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="{ name: 'sing' }" @click.native="List">唱歌培训</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="{name: 'instrumental'}" @click.native="List">器乐培训</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="{ name: 'dance' }" @click.native="List">舞蹈培训</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/broadcast" @click.native="List">播音口才</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="{ name: 'online' }" @click.native="List">线上培训</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/live" @click.native="List">直播课</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="{ name: 'news' }" @click.native="List">新闻资讯</nuxt-link>
+            <li v-for="item in list" :key="item.name">
+              <nuxt-link :to="{ name: item.name }" @click.native="List"> {{ item.title }} </nuxt-link>
             </li>
           </ul>
         </dd>
@@ -55,16 +34,20 @@
 </template>
 
 <script>
+import { api_navigation } from '../ApiManage/index';
 export default {
 	data() {
 		return {
 			isShow: false,
+			list: this.$store.state.options.headers,
 		};
 	},
 	mounted() {
 		// 获取document对象的click和touchstart事件
 		document.addEventListener('click', this.handleDocumentClick);
 		document.addEventListener('touchstart', this.handleDocumentClick);
+		// 请求数据
+		this.getList();
 	},
 	methods: {
 		// 点击按钮切换
@@ -81,6 +64,11 @@ export default {
 		List(e) {
 			setTimeout(this.checkMume, 500);
 		},
+		// 组件挂载到el上之后，请求服务器数据
+		async getList() {
+			// const { data } = await this.$axios.get(api_navigation());
+			// this.list = data.data;
+		},
 	},
 };
 </script>
@@ -96,6 +84,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	z-index: 66;
 
 	& .logo-bar {
 		height: 100%;
@@ -180,9 +169,9 @@ export default {
 						font-size: 28px;
 						-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-						&.nuxt-link-exact-active {
-							color: $background;
-						}
+						// &.nuxt-link-exact-active {
+						// 	// color: $background;
+						// }
 					}
 				}
 			}

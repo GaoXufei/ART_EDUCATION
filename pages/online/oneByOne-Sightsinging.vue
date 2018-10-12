@@ -51,7 +51,7 @@ export default {
 			isServe: 'online',
 			// 顶部轮播
 			sing: {
-				infos: [{ src: require('~/assets/images/sing/juvenile/banner.jpg') }],
+				infos: [{ src: require('~/assets/images/online/banner.jpg') }],
 			},
 			// 主体内容
 			info: {

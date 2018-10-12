@@ -7,9 +7,9 @@
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
-            <nuxt-link :to="{ name: item.name, query: { title: item.text } }">
+            <nuxt-link :to="{ name: item.name, query: { title: item.title } }">
               <img :src="item.src" alt="">
-              <p>{{ item.text }}</p>
+              <p>{{ item.title }}</p>
             </nuxt-link>
           </li>
         </ul>
@@ -18,7 +18,6 @@
     <div class="Splendid">
       <Splendid />
     </div>
-
   </div>
 </template>
 <script>
@@ -26,21 +25,28 @@ import Swiper from '~/components/swiper';
 import SummaryNew from '~/components/summaryNew';
 import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
+import Qs from 'qs';
+import { api_course_id_list } from '~/ApiManage/index';
+import axios from 'axios';
 export default {
 	head: {
 		title: '声乐培训',
 	},
 	data() {
 		return {
-			sing: {
-				infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
-			},
-			course: [
-				{ src: require('~/assets/images/sing/course_list01.jpg'), text: '少儿·声乐', name: 'sing-juvenile' },
-				{ src: require('~/assets/images/sing/course_list02.jpg'), text: '成人·声乐', name: 'sing-fullgrown' },
-			],
+			sing: { infos: [{ src: require('~/assets/images/sing/banner.jpg') }] },
+			course: this.$store.state.options.sings,
 		};
 	},
+	// async asyncData({ app }) {
+	// 	const course_list = await app.$axios.post(api_course_id_list(), Qs.stringify({ id: 2 }));
+	// 	return {
+	// 		sing: {
+	// 			infos: [{ src: require('~/assets/images/sing/banner.jpg') }],
+	// 		},
+	// 		course: course_list.data.data,
+	// 	};
+	// },
 	components: {
 		Swiper,
 		SummaryNew,
