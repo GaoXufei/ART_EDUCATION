@@ -28,7 +28,7 @@ import ColumnTop from '~/components/public/columnTop';
 import Splendid from '~/components/public/splendid';
 export default {
 	head: {
-		title: '器乐培训',
+		title: '器乐',
 	},
 	data() {
 		return {
@@ -38,17 +38,17 @@ export default {
 			course: [
 				{
 					src: require('~/assets/images/instrumental/course_list01.jpg'),
-					text: '钢琴·培训',
+					text: '钢琴',
 					name: 'instrumental-piano',
 				},
 				{
 					src: require('~/assets/images/instrumental/course_list02.jpg'),
-					text: '吉他·培训',
+					text: '吉他',
 					name: 'instrumental-guitar',
 				},
 				{
 					src: require('~/assets/images/instrumental/course_list03.jpg'),
-					text: '尤克里里·培训',
+					text: '尤克里里',
 					name: 'instrumental-ukulele',
 				},
 			],

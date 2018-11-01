@@ -8,7 +8,6 @@
         <button class="btn" @click="backIndex">返回首页</button>
       </div>
     </template>
-    {{ error }}
   </div>
 </template>
 <script>

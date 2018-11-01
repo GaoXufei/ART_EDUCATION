@@ -7,7 +7,8 @@
       <ul class="scroll-content" :style="{ 'transform': 'translateY('+ top +')' }">
         <li v-for="item in newslist" :key="item.key">
           <i></i>
-          <nuxt-link :to="{ name: item.name, query: { id: item.id } }">{{ item.title }}</nuxt-link>
+          <!-- <nuxt-link :to="{ name: item.name, query: { id: item.id } }">{{ item.title }}</nuxt-link> -->
+          <a :href="`/news/id?id=${item.id}`">{{ item.title }}</a>
           <span>{{ item.date }}</span>
         </li>
       </ul>

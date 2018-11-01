@@ -15,6 +15,9 @@
     <section class="environment">
       <ColumnContainer :banner="environment" title="校区地址" />
     </section>
+    <section>
+      {{ news }}
+    </section>
   </main>
 </template>
 
@@ -24,7 +27,7 @@ import SummaryNew from '~/components/summaryNew';
 import IndexNav from '~/components/indexNav';
 import HotClass from '~/components/hotClass';
 import ColumnContainer from '~/components/public/columnContainer';
-import { api_banner, api_index_hot, api_index_environment } from '../ApiManage/index';
+import { api_banner, api_index_hot, api_index_environment, api_new_top } from '../ApiManage/index';
 import qs from 'qs';
 
 export default {
@@ -49,6 +52,12 @@ export default {
 				isBtn: true,
 				infos: this.$store.state.options.indexEnvironment,
 			},
+		};
+	},
+	async asyncData({ app }) {
+		const { data } = await app.$axios.get(`${api_new_top()}&num=3`);
+		return {
+			news: data.data,
 		};
 	},
 };
