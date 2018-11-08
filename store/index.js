@@ -37,7 +37,7 @@ export const actions = {
   // 获取首页四巨头
   // 2 3 4 5
   LoadIndexNav({ commit }) {
-    return this.$axios.post(api_nav(), qs.stringify({ str: '2' })).then(response => {
+    return this.$axios.post(api_nav(), qs.stringify({ str: '2,3,4,5' })).then(response => {
       commit('options/SUCCESS_DATA_INDEX_NAV', getResData(response))
     })
   },

@@ -15,9 +15,6 @@
     <section class="environment">
       <ColumnContainer :banner="environment" title="校区地址" />
     </section>
-    <section>
-      {{ news }}
-    </section>
   </main>
 </template>
 
@@ -52,12 +49,6 @@ export default {
 				isBtn: true,
 				infos: this.$store.state.options.indexEnvironment,
 			},
-		};
-	},
-	async asyncData({ app }) {
-		const { data } = await app.$axios.get(`${api_new_top()}&num=3`);
-		return {
-			news: data.data,
 		};
 	},
 };
