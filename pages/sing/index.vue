@@ -16,7 +16,8 @@
       </div>
     </main>
     <div class="Splendid">
-      <Splendid />
+
+      <Splendid isType="sing" />
     </div>
   </div>
 </template>

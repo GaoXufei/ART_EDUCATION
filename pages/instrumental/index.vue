@@ -16,7 +16,7 @@
       </div>
     </main>
     <div class="Splendid">
-      <Splendid />
+      <Splendid class="Splendid" isType="ins" />
     </div>
 
   </div>

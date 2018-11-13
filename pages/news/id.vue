@@ -94,6 +94,10 @@ export default {
 					text-indent: 48px;
 					margin: 20px 0;
 				}
+
+				& strong {
+					font-weight: 700;
+				}
 			}
 		}
 	}

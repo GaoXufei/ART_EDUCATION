@@ -36,7 +36,11 @@ module.exports = {
       name: 'description',
       content: 'Meta description'
     }
+    ],
+    script: [
+      { src: 'https://hm.baidu.com/hm.js?b903d253cceedb9cde20cf1cd6c72bbc' }
     ]
+
   },
   css: [
     // 引入reset
@@ -50,6 +54,8 @@ module.exports = {
   plugins: [
     // 引入mint-ui
     '~plugins/mint-ui-plugins.js',
+    // 统计代码
+    '~plugins/Statistics.js'
   ],
   build: {
     vendor: ['axios'],

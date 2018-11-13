@@ -34,7 +34,7 @@
       <CourseInnovate :isServe="isServe" />
     </main>
 
-    <Splendid class="Splendid" />
+    <Splendid class="Splendid" isType="dance" />
   </div>
 </template>
 

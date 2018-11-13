@@ -30,8 +30,8 @@
     <main class="innovate">
       <CourseInnovate :isServe="isServe" />
     </main>
+    <Splendid class="Splendid" isType="online" />
 
-    <Splendid class="Splendid" />
   </div>
 </template>
 

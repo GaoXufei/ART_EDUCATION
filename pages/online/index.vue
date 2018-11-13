@@ -4,7 +4,7 @@
     <SummaryNew />
     <main class="sing_main">
       <!-- 栏目名称 -->
-      <ColumnTop title="线上课程" />
+      <ColumnTop title="在线课程" />
       <div class="course_item_gruop">
         <ul>
           <li v-for="item in course" :key="item.key">
@@ -17,7 +17,7 @@
       </div>
     </main>
     <div class="Splendid">
-      <Splendid />
+      <Splendid isType="online" />
     </div>
   </div>
 </template>
@@ -38,29 +38,29 @@ export default {
 			course: [
 				{
 					src: require('~/assets/images/online/course_list01.jpg'),
-					text: '视频1对1·乐理视唱',
+					text: '在线学乐理视唱',
 					name: 'online-oneByOne-Sightsinging',
 				},
 				{
 					src: require('~/assets/images/online/course_list02.jpg'),
-					text: '视频1对1·学唱歌',
+					text: '在线学唱歌',
 					name: 'online-oneByOne-sing',
 				},
-				{
-					src: require('~/assets/images/online/course_list03.jpg'),
-					text: '视频1对1·学钢琴',
-					name: 'online-oneByOne-piano',
-				},
-				{
-					src: require('~/assets/images/online/course_list04.jpg'),
-					text: '视频1对1·学吉他',
-					name: 'online-oneByOne-guitar',
-				},
-				{
-					src: require('~/assets/images/online/course_list05.jpg'),
-					text: '视频1对1·尤克里里',
-					name: 'online-oneByOne-ukulele',
-				},
+				// {
+				// 	src: require('~/assets/images/online/course_list03.jpg'),
+				// 	text: '视频1对1·学钢琴',
+				// 	name: 'online-oneByOne-piano',
+				// },
+				// {
+				// 	src: require('~/assets/images/online/course_list04.jpg'),
+				// 	text: '视频1对1·学吉他',
+				// 	name: 'online-oneByOne-guitar',
+				// },
+				// {
+				// 	src: require('~/assets/images/online/course_list05.jpg'),
+				// 	text: '视频1对1·尤克里里',
+				// 	name: 'online-oneByOne-ukulele',
+				// },
 			],
 		};
 	},

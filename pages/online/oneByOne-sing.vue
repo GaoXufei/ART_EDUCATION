@@ -7,7 +7,7 @@
       <div class="content">
         <div class="classify">
           <span>科目分类：</span>
-          <i>K歌方向 流行唱法 民族唱法 美声唱法</i>
+          <i>少儿声乐 K歌方向 流行唱法 民族唱法 美声唱法</i>
         </div>
         <div class="introduce">
           <ul>
@@ -27,11 +27,14 @@
             </li>
             <li>
               <dl>
-                <dt>课程介绍</dt>
+                <dt>针对性解决问题</dt>
                 <dd>
-                  <h5>课程说明</h5>
-                  <p>{{ info.course_introduce.explain }}</p>
-                  <h5>课程优势</h5>
+                  <p v-html="info.course_introduce.explain"></p>
+                </dd>
+              </dl>
+              <dl>
+                <dt>课程体系：</dt>
+                <dd>
                   <p v-for="item in info.course_introduce.superiority" :key="item.key">{{ item }}</p>
                 </dd>
               </dl>
@@ -44,8 +47,8 @@
     <main class="innovate">
       <CourseInnovate :isServe="isServe" />
     </main>
+    <Splendid class="Splendid" isType="online" />
 
-    <Splendid class="Splendid" />
   </div>
 </template>
 
@@ -72,13 +75,15 @@ export default {
 				title: title,
 				be_propitious_to:
 					'<p><b style="font-weight: 700">少儿声乐：</b>纯少儿兴趣爱好提升 ;少儿声乐考级</p><p><b style="font-weight: 700">成人学唱歌：</b>.完全不敢开口的小白，O基础，满足去KTV一展歌喉的需求（工作应酬.聚会交友）;声乐爱好者，平时喜欢网络K歌发朋友圈，成人零基础“跑调 高音上不去 低音下不来 不会用气 节奏跟不上 唱歌没有感情，会唱的歌曲少 等。</p>',
-				course_style: ['视频1对1'],
+				course_style: ['在线直播', '录播'],
 				course_introduce: {
 					explain:
-						'成人K歌方向。艺启学教学目标、教学手法、教学内容、都经过了量体裁衣，并制定更加适合成人学唱歌的一套教学大纲、教材、教学手法。 ',
+						'很多学员第一节课说“自己唱歌跑调”“唱歌不好听”“没有高音”“跟不上节奏”“担心学不会”“怕坚持不下去”“不会识谱”等等……<br />您是否有以上的问题，艺启学声乐教师团队10年致力于零基础歌唱小白教学，这都可以通过学习解决掉哦！ ',
 					superiority: [
-						'A.以学员嗓音条件、性格、习惯、之需为本、针对性强;',
-						'B.创新的教学模式 、让学唱歌更加通俗易懂 、专业性强；',
+						'1、经过3年的研发 实践、沉淀，分为：唱歌发声方法技巧、帮帮唱、一起唱三个环节，立体式进阶学习模式让“抽象”“枯燥”学习变得更加有趣。',
+						'2、直接有效的教学方法，让声乐小白们学起来更加轻松、有效，彻底终结传统式教学给学生带来的“云里雾里”、“似懂非懂”的学习效果。',
+						'3、独创线型学歌法，帮不会识谱的你，直接找到歌词的高低及节奏。不识简谱也可以学唱歌。',
+						'4、帮帮唱课下学习课件，让你一部手机搞定发声、识简谱学唱歌，真正告别“小白”变身“麦霸”。',
 					],
 				},
 			},
@@ -128,8 +133,8 @@ export default {
 
 				& ul {
 					background: url('~/assets/images/online/sing/person.png') no-repeat;
-					background-size: 65%;
-					background-position: right 50%;
+					background-size: 60%;
+					background-position: right 250px;
 
 					& li {
 						margin-top: 34px;
@@ -140,6 +145,10 @@ export default {
 						}
 
 						& dl {
+							&:nth-of-type(2) {
+								margin-top: 20px;
+							}
+
 							& dt {
 								display: flex;
 								justify-content: flex-start;
